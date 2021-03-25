@@ -16,9 +16,9 @@ git pull origin master
 Praktični dio sastoji se od zapisnika s intervjua, plana projekta, specifikacije zahtjeva, specifikacije dizajna, web aplikacije, programske i korisničke dokumentacije.
 
 ### Zadaci za praktični dio
-1. Isporučiti zapisnik s intervjua koji će se održati 18.3.2021.
-	* isporučuje se individualno (svatko u svoju privatnu mapu). Isporuka započinje prihvaćanjem zadatka na sljedećoj poveznici [bit će objavljeno naknadno] čime će se automatski stvoriti privatna mapa za isporuku sadržaja zadatka. 
-	* **Rok za predaju zapisnika je 26.3.2021. u 8:00**	
+1. Isporučiti zapisnik s intervjua koji će se održati 25.3.2021.
+	* isporučuje se individualno (svatko u svoju privatnu mapu). Isporuka započinje prihvaćanjem zadatka na sljedećoj poveznici https://classroom.github.com/a/TSemNAGr čime će se automatski stvoriti privatna mapa za isporuku sadržaja zadatka. 
+	* **Rok za predaju zapisnika je 2.4.2021. u 8:00**	
 	 
 2. Plan projekta 
 3. Specifikacija zahtjeva 
@@ -29,6 +29,7 @@ Praktični dio sastoji se od zapisnika s intervjua, plana projekta, specifikacij
 	Isporučene dokumente možete mijenjati neograničen broj puta do krajnjeg roka. 
 	U sklopu izrade modela podataka, temeljem izrađenog konceptualnog modela treba realizirati fizički model te ga ugraditi na zajednički server i popuniti s nekoliko reprezentativnih podataka. 
 	Podaci za spajanje za zajednički SQL server bit će naknadno dodani u kreirani repozitorij.
+	* **Rok za predaju zapisnika je 26.4.2021. u 8:00**
 
 5. Web-aplikacija 
 	* Isporučuju se u zajedničku mapu grupe. 
