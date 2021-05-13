@@ -1,0 +1,57 @@
+﻿{
+   "ContextClassName": "FirmaContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Model",
+   "ProjectRootNamespace": "EF",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Artikl]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Dokument]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Drzava]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Mjesto]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Osoba]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Partner]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Stavka]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Tvrtka]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}
