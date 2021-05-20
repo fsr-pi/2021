@@ -1,0 +1,27 @@
+﻿@model MjestoViewModel
+
+<tr>
+  <td class="text-left">@Model.PostBrojMjesta</td>
+  <td class="text-left">@Model.NazivMjesta</td>
+  <td class="text-left">@Model.PostNazivMjesta</td>
+  <td class="text-left">@Model.NazivDrzave</td>
+  <td>
+    <a asp-action="Edit"
+        asp-route-id="Model.IdMjesta"       
+        class="btn btn-sm edit" 
+        data-get-ajax="@Url.Action("GetAjax", new { id = Model.IdMjesta })" 
+        data-edit-ajax="@Url.Action("EditAjax", new { id = Model.IdMjesta })" 
+        title="Ažuriraj"><i class="fas fa-edit"></i></a>
+  </td>
+  <td>
+    <form asp-action="Delete" method="post"
+          asp-route-id="@Model.IdMjesta">
+      <button class="btn btn-sm btn-danger delete" 
+              data-delete-ajax="@Url.Action("DeleteAjax", new { id = Model.IdMjesta })" 
+              title="Obriši">
+        <i class="fas fa-trash-alt"></i>
+      </button>
+    </form>
+  </td>
+</tr>
+  

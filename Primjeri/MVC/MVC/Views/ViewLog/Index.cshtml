@@ -1,0 +1,15 @@
+﻿@{
+  ViewData["Title"] = "Pregled tragova praćenja rada";
+}
+
+<form asp-action="Show" method="get">
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">Pregledaj zapise za dan:</label>
+    <div class="col-sm-2">
+      <input name="dan" type="date" class="form-control datum" />
+    </div>
+    <div class="col-sm-1">
+      <button type="submit" class="btn btn-sm btn-primary" title="Dohvati"><i class="fas fa-check-circle"></i></button>
+    </div>
+  </div>
+</form>

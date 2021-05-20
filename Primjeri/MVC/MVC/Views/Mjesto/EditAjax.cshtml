@@ -1,0 +1,29 @@
+﻿@model Mjesto
+
+<tr>
+  <td class="text-left">    
+    <input asp-for="PostBrMjesta" class="form-control" data-save="" />
+  </td>
+  <td class="text-left">
+    <input asp-for="NazMjesta" class="form-control" data-save="" />
+  </td>
+  <td class="text-left">
+    <input asp-for="PostNazMjesta" class="form-control" data-save="" />
+  </td>
+  <td class="text-left">
+    <select class="form-control" asp-for="OznDrzave" asp-items="ViewBag.Drzave" data-save="">
+    </select>
+  </td>
+  <td>
+    <input type="hidden" asp-for="IdMjesta" data-save="" />
+    <button type="submit" class="btn btn-sm btn-primary save" title="Spremi"><i class="fas fa-save"></i></button>
+  </td>
+  <td>
+    <button class="btn btn-sm cancel" title="Odustani"><i class="fas fa-undo-alt"></i></button>
+  </td>
+</tr>
+<tr>
+  <td colspan="6">
+    <div asp-validation-summary="All"></div>
+  </td>
+</tr>

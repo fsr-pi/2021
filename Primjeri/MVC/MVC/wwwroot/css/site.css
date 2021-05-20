@@ -1,0 +1,24 @@
+﻿main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo-icon {
+  height: 30px;
+}
+
+.validation-summary-errors { font-weight: bold; color:#a94442;}
+.validation-summary-valid { display: none;}
+.input-validation-error{
+    border-color:red;
+}
+.pagebox {
+    width: 45px;           
+}
+.pagebox::selection{
+    background-color:grey;
+}
+
+.malaslika {
+  height: 40px;
+}

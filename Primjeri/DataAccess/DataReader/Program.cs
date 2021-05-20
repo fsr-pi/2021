@@ -9,7 +9,7 @@ namespace DataReader
   {
     public static void Main(string[] args)
     {
-      ShowProducts();
+      //ShowProducts();
       Console.WriteLine();      
       ShowProductsBetterVersion();     
     }
@@ -21,7 +21,7 @@ namespace DataReader
       IDbConnection conn = new SqlConnection(connString);
 
       IDbCommand command = new SqlCommand();
-      command.CommandText = "SELECT TOP 3 * FROM Artikl";
+      command.CommandText = "SELECT TOP 10 * FROM Artikl ORDER BY CijArtikla DESC";
       command.Connection = conn;
 
       conn.Open();
@@ -48,7 +48,7 @@ namespace DataReader
         {
           using (var command = conn.CreateCommand())
           {
-            command.CommandText = "SELECT TOP 3 * FROM Artikl";
+            command.CommandText = "SELECT TOP 10 * FROM Artikl ORDER BY CijArtikla DESC";
             command.Connection = conn;
 
             conn.Open();

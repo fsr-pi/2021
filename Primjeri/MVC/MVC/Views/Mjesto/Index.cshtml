@@ -1,0 +1,76 @@
+﻿@model MjestaViewModel
+
+@{
+  ViewBag.Title = "Mjesta";
+}
+
+<h2>Popis mjesta</h2>
+
+
+<a asp-action="Create">Unos novog mjesta</a>
+
+<pager page-info="@Model.PagingInfo" page-action="Index" page-title="Unesite željenu stranicu"
+     class="float-right">
+</pager>
+
+<table class="table table-sm table-striped table-hover">
+  <thead>
+    <tr>
+      @{
+        string[] nazivi = { "Poštanski broj", "Naziv mjesta", "Poštanski naziv mjesta", "Država" };
+        for (int i = 1; i <= nazivi.Length; i++)
+        {
+          <th>
+            <a asp-route-sort="@i"
+               asp-route-page="@Model.PagingInfo.CurrentPage"
+               asp-route-ascending="@(Model.PagingInfo.Sort == i ? !Model.PagingInfo.Ascending : true)">
+              @nazivi[i - 1]
+            </a>
+          </th>
+        }
+      }
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var mjesto in Model.Mjesta)
+    {
+      <tr>
+        <td class="text-left">@mjesto.PostBrojMjesta</td>
+        <td class="text-left">@mjesto.NazivMjesta</td>
+        <td class="text-left">@mjesto.PostNazivMjesta</td>
+        <td class="text-left">@mjesto.NazivDrzave</td>
+        <td>
+          <a asp-action="Edit"
+             asp-route-id="@mjesto.IdMjesta"
+             asp-route-page="@Model.PagingInfo.CurrentPage"
+             asp-route-sort="@Model.PagingInfo.Sort"
+             asp-route-ascending="@Model.PagingInfo.Ascending"
+             class="btn btn-sm edit"
+             data-get-ajax="@Url.Action("GetAjax", new { id = mjesto.IdMjesta })"
+             data-edit-ajax="@Url.Action("EditAjax", new { id = mjesto.IdMjesta })"
+             title="Ažuriraj"><i class="fas fa-edit"></i></a>
+        </td>
+        <td>
+          <form asp-action="Delete" method="post"
+                asp-route-id="@mjesto.IdMjesta"
+                asp-route-page="@Model.PagingInfo.CurrentPage"
+                asp-route-sort="@Model.PagingInfo.Sort"
+                asp-route-ascending="@Model.PagingInfo.Ascending">
+            <button class="btn btn-sm btn-danger delete"
+                    data-delete-ajax="@Url.Action("DeleteAjax", new { id = mjesto.IdMjesta })"
+                    title="Obriši">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </form>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@section scripts {
+  <script src="~/js/pager.js" asp-append-version="true"></script>
+  <partial name="IncludeValidation" />
+}
