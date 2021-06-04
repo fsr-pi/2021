@@ -21,8 +21,8 @@
         for (int i = 1; i <= nazivi.Length; i++)
         {
           <th>
-            <a asp-route-sort="@i" 
-               asp-route-page="@Model.PagingInfo.CurrentPage" 
+            <a asp-route-sort="@i"
+               asp-route-page="@Model.PagingInfo.CurrentPage"
                asp-route-ascending="@(Model.PagingInfo.Sort == i ? !Model.PagingInfo.Ascending : true)">
               @nazivi[i - 1]
             </a>
@@ -54,7 +54,7 @@
                 asp-route-id="@partner.IdPartnera"
                 asp-route-page="@Model.PagingInfo.CurrentPage"
                 asp-route-sort="@Model.PagingInfo.Sort"
-                asp-route-ascending="@Model.PagingInfo.Ascending">            
+                asp-route-ascending="@Model.PagingInfo.Ascending">
             <button type="submit" class="btn btn-sm btn-danger delete" title="Obriši"><i class="fas fa-trash-alt"></i></button>
           </form>
         </td>
@@ -62,3 +62,7 @@
     }
   </tbody>
 </table>
+
+@section scripts {
+  <script src="~/js/pager.js" asp-append-version="true"></script>
+}
