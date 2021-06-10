@@ -13,17 +13,19 @@ namespace MVC
   public class Startup
   {
     public IConfiguration Configuration { get; }
+    public IWebHostEnvironment CurrentEnvironment { get; }
 
-    public Startup(IConfiguration configuration)
+    public Startup(IConfiguration configuration, IWebHostEnvironment env)
     {
       Configuration = configuration;
+      CurrentEnvironment = env;
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+      var environmentName = CurrentEnvironment.EnvironmentName;
       bool useSecretFile = "Development".Equals(environmentName, StringComparison.OrdinalIgnoreCase);
       
 
