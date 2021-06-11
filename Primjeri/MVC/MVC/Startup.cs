@@ -24,11 +24,9 @@ namespace MVC
     // This method gets called by the runtime. Use this method to add services to the container.
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
-    {
-      var environmentName = CurrentEnvironment.EnvironmentName;
-      bool useSecretFile = "Development".Equals(environmentName, StringComparison.OrdinalIgnoreCase);
+    {      
+      bool useSecretFile = CurrentEnvironment.IsDevelopment();      
       
-
       var appSection = Configuration.GetSection("AppSettings");
       services.Configure<AppSettings>(appSection);
 
