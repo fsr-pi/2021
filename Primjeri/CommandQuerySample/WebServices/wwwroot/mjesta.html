@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Pregled svih mjesta</title>
+  <link href="lib/jqueryui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  <link href="lib/jtable/lib/themes/lightcolor/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container">   
+    <div class="row">      
+        Filtriraj po nazivu mjesta: <input type="text" id="filter" />
+        <button id="btnFilter">Filtriraj</button>
+    </div>
+    <div class="row">
+      <div class="col-sm-12" id="mjesta">
+        
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jqueryui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="lib/jtable/lib/jquery.jtable.min.js"></script>
+  <script type="text/javascript" src="lib/jtable/lib/localization/jquery.jtable.hr.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#mjesta').jtable({
+        title: 'Popis mjesta',
+        paging: true,
+        pageSize: 10, 
+        sorting: true, 
+        defaultSorting: 'IdMjesta DESC',
+        actions: {
+          listAction: 'jtable/mjesto/getall',
+          createAction: 'jtable/mjesto/create',
+          updateAction: 'jtable/mjesto/update',
+          deleteAction: 'jtable/mjesto/delete'
+        },
+        fields: {
+          IdMjesta: {
+            key: true,
+            list: false
+          },
+          PostBrojMjesta: {
+            title: 'Poštanski broj',
+            width: '20%'
+          },
+          NazivMjesta: {
+            title: 'Naziv mjesta',
+            width: '30%'
+          },
+          PostNazivMjesta: {
+            title: 'Poštanski naziv mjesta',
+            width: '30%'
+          },
+          OznDrzave: {
+            title: 'Država',
+            width: '20%',
+            options: 'Lookup/Drzave'
+          }         
+        }
+      });
+
+      $("#mjesta").jtable('load');
+
+      $("#btnFilter").click(function (event) {
+        event.preventDefault();      
+        $("#mjesta").jtable('load', {
+          search: $('#filter').val()
+        });          
+      });
+    });    
+  </script>
+
+</body>
+</html>
