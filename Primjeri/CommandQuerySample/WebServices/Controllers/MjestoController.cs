@@ -83,7 +83,10 @@ namespace WebServices.Controllers
         SearchText = loadParams.Filter        
       };
       query.Sort = new SortInfo();
-      query.Sort.ColumnOrder.Add(new KeyValuePair<string, SortInfo.Order>(loadParams.SortColumn, loadParams.Descending ? SortInfo.Order.DESCENDING : SortInfo.Order.ASCENDING));
+      if (loadParams.SortColumn != null)
+      {
+        query.Sort.ColumnOrder.Add(new KeyValuePair<string, SortInfo.Order>(loadParams.SortColumn, loadParams.Descending ? SortInfo.Order.DESCENDING : SortInfo.Order.ASCENDING));
+      }
       var list = await mjestaQueryHandler.Handle(query);
       return list;      
     }  
